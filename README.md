@@ -9,4 +9,4 @@ Nous disposons d'un peu moins d'une semaine pour ce projet.
 Début du projet : 
 	- [ ] Hugo : code César
 	- [ ] Léa : code de substitution
-	- [ ] Léa : structure du projet ( classe interface...)
+	- [X] Léa : structure du projet ( classe interface...)
