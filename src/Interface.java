@@ -1,6 +1,6 @@
+import substitution.sub;
 import Vernam.vernam;
 import Cesar.ces;
-import substitution.sub;
 
 public class Interface {
 	public static void main(String[] args) {
