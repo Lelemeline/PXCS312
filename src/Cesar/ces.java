@@ -1,15 +1,8 @@
-/**
- *
- */
 package Cesar;
 
-/**
- *
- */
-public class Cesar {
-
-
-	public static String Encrypt(char[] txt,int N) {
+public class ces {
+	public static String Encrypt(String texte,int N) {
+		char[] txt = texte.toCharArray();
 		String modifie="";
 		int temp;
 
@@ -32,7 +25,8 @@ public class Cesar {
 	}
 
 
-	public static String Decrypt(char[] txt,int N) {
+	public static String Decrypt(String texte,int N) {
+		char[] txt = texte.toCharArray();
 		String modifie="";
 		int temp;
 

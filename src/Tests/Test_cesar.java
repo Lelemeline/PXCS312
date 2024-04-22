@@ -1,8 +1,8 @@
-package Cesar;
+package Tests;
+import Cesar.ces;
 
 
-
-public class Test {
+public class Test_cesar {
 
 	public static void main(String[] args) {
 		String phrase = "Zut ! Je crois que le chien Sambuca prefere le whisky revigorant au doux porto";
@@ -11,9 +11,9 @@ public class Test {
 		System.out.println(phrase);
 
 
-		String phrase_E_CESAR=Cesar.Encrypt(phrase.toCharArray(),3);
-		Cesar.Decrypt(phrase_E_CESAR.toCharArray(),3);
-		if(phrase.compareTo(Cesar.Decrypt(phrase_E_CESAR.toCharArray(),3))!=0) {
+		String phrase_E_CESAR= ces.Encrypt(phrase,3);
+		ces.Decrypt(phrase_E_CESAR,3);
+		if(phrase.compareTo(ces.Decrypt(phrase_E_CESAR,3))!=0) {
 			System.out.println("Le code César ne fonctionne pas");
 		}
 		else {

@@ -1,7 +1,5 @@
 package Vernam;
 
-
-
 public class vernam {
 	public static String Encrypt(char[] txt,char[] key) {
 		String som="";

@@ -1,7 +1,8 @@
-package Vernam;
+package Tests;
+import Vernam.vernam;
 
 
-public class test_vernam {
+public class Test_vernam {
 	public static void main(String[] args) {
 		String phrase = "Zut ! Je crois que le chien Sambuca prefere le whisky revigorant au doux porto";
 

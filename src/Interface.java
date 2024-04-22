@@ -1,6 +1,5 @@
-
-import Cesar.Cesar;
 import Vernam.vernam;
+import Cesar.ces;
 import substitution.sub;
 
 public class Interface {
@@ -8,18 +7,18 @@ public class Interface {
 		switch(args[1]){
 			case "-rot13" :
 				if(args[0]=="-e") {
-					System.out.println(Cesar.Encrypt(args[2].toCharArray(), 13));
+					System.out.println(ces.Encrypt(args[2], 13));
 				}
 				else if(args[0]=="-d") {
-					System.out.println(Cesar.Decrypt(args[2].toCharArray(), 13));
+					System.out.println(ces.Decrypt(args[2], 13));
 				}
 				break;
 			case "-caesar" :
 				if(args[0]=="-e") {
-					System.out.println(Cesar.Encrypt(args[2].toCharArray(), Integer.parseInt(args[3])));
+					System.out.println(ces.Encrypt(args[2], Integer.parseInt(args[3])));
 				}
 				else if(args[0]=="-d") {
-					System.out.println(Cesar.Decrypt(args[2].toCharArray(), Integer.parseInt(args[3])));
+					System.out.println(ces.Decrypt(args[2], Integer.parseInt(args[3])));
 				}
 				break;
 			case "-sub" :
