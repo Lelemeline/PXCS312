@@ -1,16 +1,13 @@
-/**
- *
- */
-/**
- *
- */
-package Cesar;
-public class ces {
-	public static String Encrypt(String texte,int N) {
+package Algos;
+import Crypto.Crypto;
+public class ces implements Crypto{
+	@Override
+	public String Cypher(String texte,String C) {
+		int N = Integer.parseInt(C);
 		char[] txt = texte.toCharArray();
 		String modifie="";
 		int temp;
-
+		N=N%26;
 		for (int index=0; index <txt.length; index++) {
 			temp=(int)txt[index];
 			if(((temp>= 65) & (temp<=90))) {
@@ -30,11 +27,12 @@ public class ces {
 	}
 
 
-	public static String Decrypt(String texte,int N) {
+	public String Decypher(String texte,String C) {
+		int N = Integer.parseInt(C);
 		char[] txt = texte.toCharArray();
 		String modifie="";
 		int temp;
-
+		N=N%26;
 		for (int index=0; index <txt.length; index++) {
 			temp=(int)txt[index];
 			if(((temp>= 65) & (temp<=90))) {

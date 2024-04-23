@@ -1,7 +1,10 @@
-package Vernam;
-
-public class vernam {
-	public static String Encrypt(char[] txt,char[] key) {
+package Algos;
+import Crypto.Crypto;
+public class vernam implements Crypto {
+	@Override
+	public String Cypher(String texte,String cle) {
+		char[] key = cle.toCharArray();
+		char[] txt = texte.toCharArray();
 		String som="";
 		int temp_txt;
 		int temp_cle;
@@ -26,7 +29,9 @@ public class vernam {
 		return som;
 
 	}
-	public static String Decrypt(char[] txt,char[] key) {
+	public String Decypher(String texte,String cle) {
+		char[] key = cle.toCharArray();
+		char[] txt = texte.toCharArray();
 		String som="";
 		int temp_txt;
 		int temp_cle;
@@ -57,7 +62,6 @@ public class vernam {
 		for(int i=0;i<longueur;i++) {
 			cle[i]=(char)(random_int(0,26)+65);
 		}
-		System.out.println(cle);
 		return cle;
 	}
 
@@ -66,4 +70,5 @@ public class vernam {
 	{
 		return (int) (Math.random()*(Max-Min))+Min;
 	}
+
 }
