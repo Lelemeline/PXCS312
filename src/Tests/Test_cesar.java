@@ -7,7 +7,10 @@ public class Test_cesar {
 	public static void main(String[] args) {
 		ces cesar = new ces();
 		String[] decalage = {"2","6","19","32","18"};
-		String[] phrase = {"Vif juge, trempez ce blond whisky aqueux","Buvez donc le whisky fameux que je partage ","Hé, Gwendal et Xavier, vous qui jouez beaucoup au Molkky : « feu » !","Zut ! Je crois que le chien Sambuca préfère le whisky revigorant au doux porto.","J'ouvris le gaz et un whisky,et tout ne fut qu'ordre, beauté,luxe, calme et volupté."};
+		String[] phrase = {"Vif juge, trempez ce blond whisky aqueux","Buvez donc le whisky fameux que je partage ",
+							"Hé, Gwendal et Xavier, vous qui jouez beaucoup au Molkky : « feu » !",
+							"Zut ! Je crois que le chien Sambuca préfère le whisky revigorant au doux porto.",
+							"J'ouvris le gaz et un whisky,et tout ne fut qu'ordre, beauté,luxe, calme et volupté."};
 		for(int i=0;i<5;i++) {
 			test(phrase[i],cesar.Cypher(phrase[i], decalage[i]),decalage[i],cesar);
 		}

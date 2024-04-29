@@ -1,25 +1,28 @@
-import Algos.*;
+import Algos.ces;
+import Algos.vernam;
+import Algos.sub;
+
 public class Main {
     public static void main(String[] args) {
 		switch(args[1]){
-			// case "-rot13" :
-            //     ces rot = new ces();
-			// 	if(args[0].equals("-e")) {
-            //         System.out.println(rot.Cypher(args[2], "13"));
-			// 	}
-			// 	else if(args[0]=="-d") {
-			// 		System.out.println(rot.Decypher(args[2], "13"));
-			// 	}
-			// 	break;
-			// case "-caesar" :
-            //     ces cesar = new ces();
-			// 	if(args[0]=="-e") {
-			// 		System.out.println(cesar.Cypher(args[2],args[3]));
-			// 	}
-			// 	else if(args[0]=="-d") {
-			// 		System.out.println(cesar.Decypher(args[2],args[3]));
-			// 	}
-			// 	break;
+			case "-rot13" :
+                ces rot = new ces();
+				if(args[0].equals("-e")) {
+                    System.out.println(rot.Cypher(args[2], "13"));
+				}
+				else if(args[0]=="-d") {
+					System.out.println(rot.Decypher(args[2], "13"));
+				}
+				break;
+			case "-caesar" :
+                ces caesar = new ces();
+				if(args[0]=="-e") {
+					System.out.println(caesar.Cypher(args[2],args[3]));
+				}
+				else if(args[0]=="-d") {
+					System.out.println(caesar.Decypher(args[2],args[3]));
+				}
+				break;
 			case "-sub" :
                 sub substitut = new sub();
 				if(args[0].equals("-e")) {

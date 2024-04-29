@@ -1,5 +1,6 @@
 package Algos;
 import Crypto.Crypto;
+
 public class ces implements Crypto{
 	@Override
 	public String Cypher(String texte,String C) {
@@ -20,8 +21,6 @@ public class ces implements Crypto{
 			}
 			modifie=modifie+ (char)temp;
 		};
-
-		//System.out.println(modifie);
 		return modifie;
 
 	}
