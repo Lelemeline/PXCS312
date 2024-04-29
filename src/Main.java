@@ -1,50 +1,39 @@
 import Algos.ces;
 import Algos.vernam;
+import Crypto.Crypto;
 import Algos.sub;
 
 public class Main {
     public static void main(String[] args) {
+		Crypto crypto = null;
 		switch(args[1]){
 			case "-rot13" :
-                ces rot = new ces();
-				if(args[0].equals("-e")) {
-                    System.out.println(rot.Cypher(args[2], "13"));
-				}
-				else if(args[0]=="-d") {
-					System.out.println(rot.Decypher(args[2], "13"));
-				}
-				break;
+				args[3] = "13";
+				crypto = new ces() ;
+				break ;
 			case "-caesar" :
-                ces caesar = new ces();
-				if(args[0]=="-e") {
-					System.out.println(caesar.Cypher(args[2],args[3]));
-				}
-				else if(args[0]=="-d") {
-					System.out.println(caesar.Decypher(args[2],args[3]));
-				}
+				crypto = new ces() ;
 				break;
 			case "-sub" :
-                sub substitut = new sub();
-				if(args[0].equals("-e")) {
-					System.out.println(substitut.Cypher(args[2],args[3]));
-
-				}
-				else if(args[0].equals("-d")) {
-					System.out.println(substitut.Decypher(args[2],args[3]));
-				}
+				crypto = new sub();
 				break;
 			case "-otp" :
-                vernam vern = new vernam();
-				if(args[0].equals("-e")) {
-					System.out.println(vern.Cypher(args[2],args[3]));
-				}
-				else if(args[0].equals("-d")) {
-					System.out.println(vern.Decypher(args[2],args[3]));
-				}
+				crypto = new vernam();
 				break;
 			default :
 				System.out.println ("commande non reconnue");
 				break;
 		}
+		if (crypto == null){
+			System.out.println ("erreur sur la reconnaissance du mode de chiffrement");
+			return ;
+		}
+		else if(args[0].equals("-e")) {
+			System.out.println(crypto.Cypher(args[2],args[3]));
+		}
+		else if(args[0].equals("-d")) {
+			System.out.println(crypto.Decypher(args[2],args[3]));
+		}
+
 	}
 }
