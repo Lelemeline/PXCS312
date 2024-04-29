@@ -1,14 +1,33 @@
+import java.awt.Desktop;
+import java.io.File;
+
 import Algos.ces;
+import Algos.sub;
 import Algos.vernam;
 import Crypto.Crypto;
-import Algos.sub;
 
 public class Main {
     public static void main(String[] args) {
 		Crypto crypto = null;
+		String cle;
+		if(args[0].equals("-help")){
+			try {
+				File file = new File("/home/lea/Documents/Esisar/3A/CS312/MiniProjet-2024/help.md");
+				if (!Desktop.isDesktopSupported()) {
+				  System.out.println("not supported");
+				  return;
+				}
+				Desktop desktop = Desktop.getDesktop();
+				if (file.exists())
+				  desktop.open(file);
+			  } catch (Exception e) {
+				e.printStackTrace();
+			  }
+			return;
+		}
 		switch(args[1]){
 			case "-rot13" :
-				args[3] = "13";
+				cle =  "13";
 				crypto = new ces() ;
 				break ;
 			case "-caesar" :
@@ -21,18 +40,25 @@ public class Main {
 				crypto = new vernam();
 				break;
 			default :
-				System.out.println ("commande non reconnue");
+				System.out.println ("Erreur : Commande non reconnue");
 				break;
 		}
-		if (crypto == null){
-			System.out.println ("erreur sur la reconnaissance du mode de chiffrement");
+		if (crypto == null){ // gestion d'erreur
+			System.out.println ("Erreur: mode de chiffrement non reconnue");
 			return ;
 		}
+		else if(args.length < 4){
+			System.out.println ("Erreur : Argument(s) Manquant(s)");
+			return ;
+		}
+		// gestion du mode de chiffrement
 		else if(args[0].equals("-e")) {
-			System.out.println(crypto.Cypher(args[2],args[3]));
+			cle = args[3];
+			System.out.println(crypto.Cypher(args[2],cle));
 		}
 		else if(args[0].equals("-d")) {
-			System.out.println(crypto.Decypher(args[2],args[3]));
+			cle = args[3];
+			System.out.println(crypto.Decypher(args[2],cle));
 		}
 
 	}
