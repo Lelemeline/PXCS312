@@ -1,9 +1,7 @@
 import java.awt.Desktop;
 import java.io.File;
 
-import Algos.ces;
-import Algos.sub;
-import Algos.vernam;
+import Algos.*;
 import Crypto.Crypto;
 
 public class Main {
@@ -40,7 +38,7 @@ public class Main {
 				crypto = new vernam();
 				break;
 			default :
-				System.out.println ("Erreur : Commande non reconnue");
+				System.out.println ("Erreur : Commande non reconnue. Aide : -help");
 				break;
 		}
 		if (crypto == null){ // gestion d'erreur

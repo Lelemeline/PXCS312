@@ -3,7 +3,7 @@ import Crypto.Crypto;
 public class vernam implements Crypto {
 	@Override
 	public String Cypher(String texte,String cle) {
-		char[] key = cle.toCharArray();
+		char[] key = (cle.toUpperCase()).toCharArray();
 		char[] txt = texte.toCharArray();
 		String som="";
 		int temp_txt;
@@ -30,7 +30,7 @@ public class vernam implements Crypto {
 
 	}
 	public String Decypher(String texte,String cle) {
-		char[] key = cle.toCharArray();
+		char[] key = (cle.toUpperCase()).toCharArray();
 		char[] txt = texte.toCharArray();
 		String som="";
 		int temp_txt;
